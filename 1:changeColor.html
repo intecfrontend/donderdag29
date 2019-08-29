@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .colorBtn {
+            padding: 1vh;
+            border-radius: 7px;
+            color: #fefefe;
+            background: green;
+            cursor: pointer;
+        }
+
+        .colorBtn:hover {
+            background: red
+        }
+
+        /*remove ugly border (skyscanner.com)*/
+        button {
+            outline: none
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <button type="button" class="colorBtn">change the color</button>
+
+
+
+    <script>
+        let colorBtn = document.querySelector('.colorBtn');
+        let bodybg = document.querySelector('body');
+        const colors = ['lime', 'green', 'red', 'brown'];
+        colorBtn.addEventListener('click', changeColor);
+
+        function changeColor() {
+            let random = Math.floor(Math.random() * colors.length)
+            bodybg.style.backgroundColor = colors[random];
+            console.log(random)
+        }
+
+        /*console.log(i); i end at 4*/
+    </script>
+
+</body>
+
+</html>
